@@ -1,9 +1,5 @@
 package com.example.math.DynamicArray.PriorityQueue;
 
-/**
- * 优先队列
- * @param <E>
- */
 public class PriorityQueue<E extends Comparable<E>> implements Queue<E> {
 
     private MaxHeap<E> maxHeap;
