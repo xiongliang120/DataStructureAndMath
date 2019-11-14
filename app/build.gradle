@@ -36,4 +36,6 @@ dependencies {
 
     //anrwatchdog
     api 'com.github.anrwatchdog:anrwatchdog:1.3.0'
+
+    implementation project(':math')
 }
