@@ -26,10 +26,6 @@ public class Main {
 
         String filename = "pride-and-prejudice.txt";
 
-        BSTSet<String> bstSet = new BSTSet<>();
-        double time1 = testSet(bstSet, filename);
-        System.out.println("BST Set: " + time1 + " s");
-
         System.out.println();
 
         LinkedListSet<String> linkedListSet = new LinkedListSet<>();

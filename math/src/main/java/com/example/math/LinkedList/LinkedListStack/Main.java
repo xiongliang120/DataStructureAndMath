@@ -24,9 +24,6 @@ public class Main {
 
         int opCount = 100000;
 
-        ArrayStack<Integer> arrayStack = new ArrayStack<>();
-        double time1 = testStack(arrayStack, opCount);
-        System.out.println("ArrayStack, time: " + time1 + " s");
 
         LinkedListStack<Integer> linkedListStack = new LinkedListStack<>();
         double time2 = testStack(linkedListStack, opCount);

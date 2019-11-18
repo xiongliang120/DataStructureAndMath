@@ -40,9 +40,5 @@ public class Main {
 
         System.out.println();
 
-        LinkedListMap<String, Integer> linkedListMap = new LinkedListMap<>();
-        double time2 = testMap(linkedListMap, filename);
-        System.out.println("Linked List Map: " + time2 + " s");
-
     }
 }
