@@ -1,7 +1,9 @@
 package com.xiongliang.pratice.DynamicArray;
 
-import androidx.annotation.IntegerRes;
-
+/**
+ * 动态数组
+ * @param <E>
+ */
 public class Array<E> {
     //数组的容量
     private int arrayLength = 10;
