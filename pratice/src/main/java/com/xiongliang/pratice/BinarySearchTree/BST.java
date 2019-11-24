@@ -51,20 +51,25 @@ public class BST<E extends Comparable<E>> {
     }
 
     //递归判断元素添加位置
-    public void addNode(Node node, E e) {
+    public Node addNode(Node node, E e) {
         if (e.compareTo(node.e) > 0) { // 走右子树
             if (node.right == null) {
-                node.right = new Node(e, null, null);
-            } else {
-                addNode(node.right, e);
+                Node tmpNode = new Node(e,null,null);
+                node.right = tmpNode;
+                return node;
             }
+            node.right = addNode(node.right, e);
+
         } else if (e.compareTo(node.e) < 0) { //走左子树
             if (node.left == null) {
-                node.left = new Node(e, null, null);
+                Node tmpNode = new Node(e,null,null);
+                node.left = tmpNode;
+                return node;
             } else {
-                addNode(node.left, e);
+                node.left = addNode(node.left, e);
             }
         }
+        return node;
     }
 
     public void removeElement(E e){
