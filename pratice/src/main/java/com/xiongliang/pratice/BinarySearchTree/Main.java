@@ -29,5 +29,10 @@ public class Main {
         bst.in();
         //后序遍历
         bst.post();
+
+        //删除元素
+        bst.removeElement(37);
+        bst.pre();
+
     }
 }
