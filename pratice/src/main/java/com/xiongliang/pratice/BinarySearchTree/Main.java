@@ -6,7 +6,7 @@ public class Main {
         for (int i=0;i< 15;i++){
             bst.add(i);
         }
-
-        System.out.println(bst);
+        //前序遍历
+        bst.pre();
     }
 }

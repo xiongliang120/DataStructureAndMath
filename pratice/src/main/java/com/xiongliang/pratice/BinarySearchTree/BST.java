@@ -70,9 +70,23 @@ public class BST<E extends Comparable<E>> {
      * 前序遍历
      * @return
      */
-    public String preOrder() {
-        return "";
+    public void pre() {
+        System.out.println("前序遍历");
+        if(rootNode != null){
+            preOrder(rootNode);
+        }
     }
+
+    public void preOrder(Node node){
+        if(node == null){
+            return;
+        }
+        System.out.print("node="+node.e);
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+
 
     /**
      * 中序遍历
