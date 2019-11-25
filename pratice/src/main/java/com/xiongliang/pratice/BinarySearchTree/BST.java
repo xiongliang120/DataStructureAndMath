@@ -38,7 +38,7 @@ public class BST<E extends Comparable<E>> {
 
     /**
      * 添加元素
-     *
+     * 添加元素都是作为叶子节点添加的
      * @param e
      */
     public void add(E e) {
@@ -83,7 +83,9 @@ public class BST<E extends Comparable<E>> {
 
     /**
      * 移除元素
-     *
+     * 1）叶子节点删除不用做处理
+     * 2）只有左子树/右子树, 使用左/右子树替代。
+     * 3）左右子树均不为空, 选择右子树的最小元素替代被删除元素;  或者左子树的最大元素替代。
      * @param node
      * @param e
      */
@@ -173,6 +175,8 @@ public class BST<E extends Comparable<E>> {
         preOrder(node.left);
         preOrder(node.right);
     }
+
+
 
     /**
      * 中序遍历

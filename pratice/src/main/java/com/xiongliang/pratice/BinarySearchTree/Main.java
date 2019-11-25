@@ -33,6 +33,5 @@ public class Main {
         //删除元素
         bst.removeElement(37);
         bst.pre();
-
     }
 }
