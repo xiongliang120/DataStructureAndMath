@@ -22,6 +22,8 @@ public class main {
         avlTree.add(12); avlTree.add(80); avlTree.add(40);
         avlTree.add(12);
 
+
+
         avlTree.isBinarySearchTree();
         System.out.println("\n是否是平衡二叉树="+avlTree.balance());
 
