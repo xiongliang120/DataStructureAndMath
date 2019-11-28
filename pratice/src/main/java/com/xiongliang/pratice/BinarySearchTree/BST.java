@@ -52,23 +52,33 @@ public class BST<E extends Comparable<E>> {
 
     //递归判断元素添加位置
     public Node addNode(Node node, E e) {
-        if (e.compareTo(node.e) > 0) { // 走右子树
-            if (node.right == null) {
-                Node tmpNode = new Node(e,null,null);
-                node.right = tmpNode;
-                return node;
-            }
-            node.right = addNode(node.right, e);
-
-        } else if (e.compareTo(node.e) < 0) { //走左子树
-            if (node.left == null) {
-                Node tmpNode = new Node(e,null,null);
-                node.left = tmpNode;
-                return node;
-            } else {
-                node.left = addNode(node.left, e);
-            }
+        if(node == null){    //1) 求解最基本问题
+            return new Node(e,null,null);
         }
+
+        if (e.compareTo(node.e) > 0) { // 走右子树
+              node.right = addNode(node.right,e);
+        } else if (e.compareTo(node.e) < 0) { //走左子树
+              node.left = addNode(node.left,e);
+        }
+        //由下面写法优化为上面写法
+//        if (e.compareTo(node.e) > 0) { // 走右子树
+//            if (node.right == null) {
+//                Node tmpNode = new Node(e,null,null);
+//                node.right = tmpNode;
+//                return node;
+//            }
+//            node.right = addNode(node.right, e);
+//
+//        } else if (e.compareTo(node.e) < 0) { //走左子树
+//            if (node.left == null) {
+//                Node tmpNode = new Node(e,null,null);
+//                node.left = tmpNode;
+//                return node;
+//            } else {
+//                node.left = addNode(node.left, e);
+//            }
+//        }
         return node;
     }
 

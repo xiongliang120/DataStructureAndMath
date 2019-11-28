@@ -116,25 +116,6 @@ public class AVLTree<E extends Comparable<E>> {
 
     //递归判断元素添加位置
     public Node addNode(Node node, E e) {
-//        if (e.compareTo(node.e) > 0) { // 走右子树
-//            if (node.right == null) {
-//                Node tmpNode = new Node(e,null,null);
-//                node.right = tmpNode;
-//                return node;
-//            }
-//            node.right = addNode(node.right, e);
-//
-//
-//        } else if (e.compareTo(node.e) < 0) { //走左子树
-//            if (node.left == null) {
-//                Node tmpNode = new Node(e,null,null);
-//                node.left = tmpNode;
-//                return node;
-//            } else {
-//                node.left = addNode(node.left, e);
-//            }
-//        }
-
         if (node == null) {
             size++;
             return new Node(e, null, null);
