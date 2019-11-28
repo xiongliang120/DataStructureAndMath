@@ -39,6 +39,7 @@ public class BST<E extends Comparable<E>> {
     /**
      * 添加元素
      * 添加元素都是作为叶子节点添加的
+     *
      * @param e
      */
     public void add(E e) {
@@ -52,14 +53,14 @@ public class BST<E extends Comparable<E>> {
 
     //递归判断元素添加位置
     public Node addNode(Node node, E e) {
-        if(node == null){    //1) 求解最基本问题
-            return new Node(e,null,null);
+        if (node == null) {    //1) 求解最基本问题
+            return new Node(e, null, null);
         }
 
         if (e.compareTo(node.e) > 0) { // 走右子树
-              node.right = addNode(node.right,e);
+            node.right = addNode(node.right, e);
         } else if (e.compareTo(node.e) < 0) { //走左子树
-              node.left = addNode(node.left,e);
+            node.left = addNode(node.left, e);
         }
         //由下面写法优化为上面写法
 //        if (e.compareTo(node.e) > 0) { // 走右子树
@@ -82,13 +83,9 @@ public class BST<E extends Comparable<E>> {
         return node;
     }
 
-    public void removeElement(E e){
-        try{
-            System.out.println("\n 删除元素");
-            remove(rootNode,e);
-        }catch (Exception exception){
-            exception.printStackTrace();
-        }
+    public void removeElement(E e) {
+        System.out.println("\n 删除元素");
+        remove(rootNode, e);
     }
 
     /**
@@ -96,12 +93,13 @@ public class BST<E extends Comparable<E>> {
      * 1）叶子节点删除不用做处理
      * 2）只有左子树/右子树, 使用左/右子树替代。
      * 3）左右子树均不为空, 选择右子树的最小元素替代被删除元素;  或者左子树的最大元素替代。
+     *
      * @param node
      * @param e
      */
-    private Node remove(Node node, E e) throws Exception {
+    private Node remove(Node node, E e) {
         if (node == null) {
-            throw new Exception("找不到元素");
+            return null;
         }
 
         if (e.compareTo(node.e) > 0) { //走右子树
@@ -130,14 +128,15 @@ public class BST<E extends Comparable<E>> {
 
     /**
      * 删除以Node 为根的二分搜索树的最小节点
-     *  返回删除节点后新的二分搜索树的根
+     * 返回删除节点后新的二分搜索树的根
+     *
      * @param node
      * @param
      * @return
      */
     public Node removeMin(Node node) {
-        if(node.left == null){
-             return node.right;
+        if (node.left == null) {
+            return node.right;
         }
         node.left = removeMin(node.left);
         return node;
@@ -185,7 +184,6 @@ public class BST<E extends Comparable<E>> {
         preOrder(node.left);
         preOrder(node.right);
     }
-
 
 
     /**
