@@ -2,6 +2,9 @@ package com.xiongliang.pratice.AVLTree;
 
 import com.xiongliang.pratice.BinarySearchTree.BST;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * AVL 树 -- 既是平衡二叉树又是二分搜索树
  * 相比二分搜索树新增概念:  节点高度， 平衡因子(即左右子树高度差)
@@ -156,6 +159,7 @@ public class AVLTree<E extends Comparable<E>> {
      * @param e
      */
     public void removeElement(E e){
+        System.out.println("\n 删除元素");
         remove(rootNode,e);
     }
 
@@ -183,6 +187,10 @@ public class AVLTree<E extends Comparable<E>> {
             Node minNode = removeMin(node.right);
             node.right.right = minNode;
             node.right.left = node.left;
+
+            //维持平衡 TODO
+
+
             return node.right;
 
         }
@@ -238,6 +246,23 @@ public class AVLTree<E extends Comparable<E>> {
         inOrder(node.right);
     }
 
+    /**
+     * 二分搜索树层序遍历
+     */
+    public void levelOrder(){
+        System.out.println("\n 二分搜索树层序遍历");
+        Queue<Node> q = new LinkedList<>();
+        q.add(rootNode);
+        while(!q.isEmpty()){
+            Node cur = q.remove();
+            System.out.print(cur.e+",");
+
+            if(cur.left != null)
+                q.add(cur.left);
+            if(cur.right != null)
+                q.add(cur.right);
+        }
+    }
 
     /**
      * 判断是否是平衡二叉树

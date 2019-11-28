@@ -26,6 +26,10 @@ public class main {
 
         avlTree.isBinarySearchTree();
         System.out.println("\n是否是平衡二叉树="+avlTree.balance());
+        avlTree.levelOrder();
+        avlTree.removeElement(37);  //删除该元素会报错
+        avlTree.isBinarySearchTree();
+        System.out.println("\n是否是平衡二叉树="+avlTree.balance());
 
     }
 }
