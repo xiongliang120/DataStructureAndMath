@@ -169,34 +169,70 @@ public class AVLTree<E extends Comparable<E>> {
             return null;
         }
 
+        Node retNode = null;
         if (e.compareTo(node.e) > 0) { //走右子树
             node.right = remove(node.right, e);
+            retNode = node;
         } else if (e.compareTo(node.e) < 0) { //走左子树
             node.left = remove(node.left, e);
+            retNode = node;
         } else {
-            size--;
-            if (node.left == null) {  //左子树为空
-                return node.right;
+            if (node.left == null) {  //左子树为空,只走一个分支
+                size--;
+                retNode =  node.right;
+            }else if (node.right == null) { //右子树为空
+                size--;
+                retNode =  node.left;
+            }else{
+                //左右子树均不为空，右子树最小节点先被删除(也许保持平衡)，然后该最小节点替换被删除节点
+                Node minNode = minNode(node.right);
+                Node tmpNode = remove(node.right,minNode.e);
+                minNode.right = tmpNode;
+                minNode.left = node.left;
+
+//                node.right.right = minNode;
+//                node.right.left = node.left;
+                retNode = minNode;
             }
-
-            if (node.right == null) { //右子树为空
-                return node.left;
-            }
-
-            //左右子树均不为空，右子树最小元素替代被删除节点
-            Node minNode = removeMin(node.right);
-            node.right.right = minNode;
-            node.right.left = node.left;
-
-            //维持平衡 TODO
-
-
-            return node.right;
-
         }
-        return node;
+
+
+
+
+//        //更新height , 删除元素为什么是加 1
+//        retNode.height = Math.max(getHeight(retNode.left), getHeight(retNode.right)) + 1;
+//
+//        //计算平衡因子
+//        int balance = getBalance(retNode);
+//
+//        if (balance > 1 && getBalance(retNode.left) > 0) {  // LL的情况
+//            return rightRotation(retNode);
+//        } else if (balance < -1 && getBalance(retNode.right) < 0) {  //RR的情况
+//            return leftRotation(retNode);
+//        } else if (balance > 1 && getBalance(retNode.left) < 0) {   //LR的情况
+//            Node tmpNode = leftRotation(retNode.left);
+//            retNode.left = tmpNode;
+//            return rightRotation(retNode);
+//        } else if (balance < -1 && getBalance(retNode.right) > 0) {  //RL 的情况
+//            Node tmpNode = rightRotation(retNode.right);
+//            retNode.right = tmpNode;
+//            return leftRotation(retNode);
+//        }
+
+        return retNode;
     }
 
+    /**
+     * 查找Node 子树的最小节点
+     * @param node
+     * @return
+     */
+    public Node minNode(Node node){
+         if(node.left == null){
+             return node;
+         }
+         return minNode(node);
+    }
 
     /**
      * 删除以Node 为根的二分搜索树的最小节点
