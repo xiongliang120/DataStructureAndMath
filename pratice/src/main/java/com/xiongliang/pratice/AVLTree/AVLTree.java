@@ -189,35 +189,33 @@ public class AVLTree<E extends Comparable<E>> {
                 Node tmpNode = remove(node.right,minNode.e);
                 minNode.right = tmpNode;
                 minNode.left = node.left;
-
-//                node.right.right = minNode;
-//                node.right.left = node.left;
                 retNode = minNode;
             }
         }
 
+        if(retNode == null){
+            return null;
+        }
 
+        //更新height , 删除元素为什么是加 1
+        retNode.height = Math.max(getHeight(retNode.left), getHeight(retNode.right)) + 1;
 
+        //计算平衡因子
+        int balance = getBalance(retNode);
 
-//        //更新height , 删除元素为什么是加 1
-//        retNode.height = Math.max(getHeight(retNode.left), getHeight(retNode.right)) + 1;
-//
-//        //计算平衡因子
-//        int balance = getBalance(retNode);
-//
-//        if (balance > 1 && getBalance(retNode.left) > 0) {  // LL的情况
-//            return rightRotation(retNode);
-//        } else if (balance < -1 && getBalance(retNode.right) < 0) {  //RR的情况
-//            return leftRotation(retNode);
-//        } else if (balance > 1 && getBalance(retNode.left) < 0) {   //LR的情况
-//            Node tmpNode = leftRotation(retNode.left);
-//            retNode.left = tmpNode;
-//            return rightRotation(retNode);
-//        } else if (balance < -1 && getBalance(retNode.right) > 0) {  //RL 的情况
-//            Node tmpNode = rightRotation(retNode.right);
-//            retNode.right = tmpNode;
-//            return leftRotation(retNode);
-//        }
+        if (balance > 1 && getBalance(retNode.left) > 0) {  // LL的情况
+            return rightRotation(retNode);
+        } else if (balance < -1 && getBalance(retNode.right) < 0) {  //RR的情况
+            return leftRotation(retNode);
+        } else if (balance > 1 && getBalance(retNode.left) < 0) {   //LR的情况
+            Node tmpNode = leftRotation(retNode.left);
+            retNode.left = tmpNode;
+            return rightRotation(retNode);
+        } else if (balance < -1 && getBalance(retNode.right) > 0) {  //RL 的情况
+            Node tmpNode = rightRotation(retNode.right);
+            retNode.right = tmpNode;
+            return leftRotation(retNode);
+        }
 
         return retNode;
     }
@@ -231,7 +229,7 @@ public class AVLTree<E extends Comparable<E>> {
          if(node.left == null){
              return node;
          }
-         return minNode(node);
+         return minNode(node.left);
     }
 
     /**
