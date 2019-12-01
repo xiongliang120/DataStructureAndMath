@@ -184,7 +184,7 @@ public class AVLTree<E extends Comparable<E>> {
                 size--;
                 retNode =  node.left;
             }else{
-                //左右子树均不为空，右子树最小节点先被删除(也许保持平衡)，然后该最小节点替换被删除节点
+                //左右子树均不为空，右子树最小节点先被删除(也需保持平衡)，然后该最小节点替换被删除节点
                 Node minNode = minNode(node.right);
                 Node tmpNode = remove(node.right,minNode.e);
                 minNode.right = tmpNode;
