@@ -197,7 +197,11 @@ public class AVLTree<E extends Comparable<E>> {
             return null;
         }
 
-        //更新height , 删除元素为什么是加 1
+        /** 更新height,height 可能加1,不变,减1
+         *  1) 类似链表树,去掉叶子节点,则height 减1
+         *  2) 左树比右树少1，去掉右树叶子节点，则height 加1
+         */
+
         retNode.height = Math.max(getHeight(retNode.left), getHeight(retNode.right)) + 1;
 
         //计算平衡因子
