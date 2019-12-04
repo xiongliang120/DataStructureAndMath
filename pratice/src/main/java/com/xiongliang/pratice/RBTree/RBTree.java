@@ -14,7 +14,9 @@ package com.xiongliang.pratice.RBTree;
  *  相对严格的AVL树而言, 红黑树旋转次数少，插入最多旋转2次，删除最多3次旋转。 对于需要大量插入,删除操作的可以选用红黑树
  *
  *  工作原理:
- *  
+ *
+ *  应用场景:
+ *  java 中 TreeSet, TreeMap 底层都是红黑树
  *
  * 相比二分搜索树新增概念: 颜色(color)
  * 添加节点：
