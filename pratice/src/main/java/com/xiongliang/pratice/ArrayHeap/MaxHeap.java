@@ -37,5 +37,24 @@ public class MaxHeap<E extends Comparable<E>> {
 
     }
 
+    /**
+     * index 节点对应的父节点的index
+     * @param index
+     * @return
+     */
+    public int parentIndex(int index) throws Exception{
+            if(index == 0){
+                throw new Exception("index异常");
+            }
+            return (index-1) /2;
+    }
+
+    public int leftIndex(int index){
+        return 2*index +1;
+    }
+
+    public int rightIndex(int index){
+        return 2*index +1;
+    }
 
 }
