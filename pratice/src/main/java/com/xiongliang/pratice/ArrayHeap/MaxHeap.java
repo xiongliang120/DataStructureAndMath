@@ -8,6 +8,9 @@ import com.xiongliang.pratice.DynamicArray.Array;
  * 特性:
  * 1) 节点i, 其父节点 parent(i) = (i-1) /2, 其左节点 left(i) = 2*i +1, 其右节点 right(i) = 2*i +2. (i 从0 计数)
  *
+ *  添加元素:
+ *
+ *  删除元素:
  * */
 public class MaxHeap<E extends Comparable<E>> {
     private Array<E> array;
