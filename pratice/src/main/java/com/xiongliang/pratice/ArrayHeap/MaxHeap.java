@@ -9,11 +9,19 @@ import com.xiongliang.pratice.DynamicArray.Array;
  * 1) 节点i, 其父节点 parent(i) = (i-1) /2, 其左节点 left(i) = 2*i +1, 其右节点 right(i) = 2*i +2. (i 从0 计数)
  *
  *  添加元素:
+ *  1) 在数组最后面添加元素
+ *  2）该节点与其父节点做比较做上浮操作，循环做上浮操作直至根节点
  *
- *  删除元素:
+ *  取出最大元素(只能取出最大):
+ *  1) 取第一个元素，并且使用最后一个元素替代第一个位置
+ *  2）第一个元素与其左右子树做比较做下沉操作，循环做下沉操作直至叶子节点
+ *
+ *  Replace --- 取出最大元素后，放入一个新的元素
+ *
+ *  heapity --- 将任意数组整理成堆的形状
  * */
 public class MaxHeap<E extends Comparable<E>> {
-    private Array<E> array;
+    public Array<E> array;
     private int size;
 
     public MaxHeap(){
@@ -26,8 +34,27 @@ public class MaxHeap<E extends Comparable<E>> {
      * @param e
      */
     public void add(E e){
-
+        array.add(e);
     }
+
+    /**
+     * 做上浮操作
+     */
+    public void siftUp(int index){
+        try{
+            int parentIndex = parentIndex(index);
+            if(array.get(index).compareTo(array.get(parentIndex)) > 0){
+                E tmpE = array.get(parentIndex);
+                array.swap(index,parentIndex);
+                siftUp(parentIndex);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+
 
     /**
      * 删除元素

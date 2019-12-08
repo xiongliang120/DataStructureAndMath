@@ -76,6 +76,33 @@ public class Array<E> {
     }
 
     /**
+     * 获取index 索引对应的元素
+     * @param index
+     * @return
+     */
+    public E get(int index) throws  Exception{
+       if(index < 0 || index > size){
+           throw new Exception("数组越界");
+       }
+       return array[index];
+    }
+
+    /**
+     * 数组中两元素进行交换
+     * @param i
+     * @param j
+     */
+    public void swap(int i,int j) throws  Exception{
+        if(i<0 || i>size || j<0 || j>size){
+            throw new Exception("数组越界");
+        }
+        E tmp = array[j];
+        array[j] = array[i];
+        array[i] = tmp;
+    }
+
+
+    /**
      * 查找元素对应的index
      *
      * @param e
