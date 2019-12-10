@@ -14,7 +14,7 @@ import com.xiongliang.pratice.DynamicArray.Array;
  *
  *  取出最大元素(只能取出最大):
  *  1) 取第一个元素，并且使用最后一个元素替代第一个位置
- *  2）第一个元素与其左右子树做比较做下沉操作，循环做下沉操作直至叶子节点
+ *  2）第一个元素与其左右子树最大节点比较做比较,做下沉操作，循环做下沉操作直至叶子节点
  *
  *  Replace --- 取出最大元素后，放入一个新的元素
  *
@@ -22,11 +22,13 @@ import com.xiongliang.pratice.DynamicArray.Array;
  * */
 public class MaxHeap<E extends Comparable<E>> {
     public Array<E> array;
-    private int size;
 
     public MaxHeap(){
          array = new Array<>();
-         size = 0;
+    }
+
+    public int getSize(){
+        return array.getSize();
     }
 
     /**
@@ -35,6 +37,7 @@ public class MaxHeap<E extends Comparable<E>> {
      */
     public void add(E e){
         array.add(e);
+        siftUp(getSize());
     }
 
     /**
@@ -61,7 +64,34 @@ public class MaxHeap<E extends Comparable<E>> {
      * @param e
      */
     public void remove(E e){
+        try{
+            array.swap(0,getSize());
+            array.removeLast();
+            siftDown(0);
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
+    }
 
+    /**
+     * 下沉操作
+     */
+    public void siftDown(int index){
+        try{
+            int leftIndex = leftIndex(index);
+            int rightIndex = rightIndex(index);
+            if(array.get(leftIndex).compareTo(array.get(rightIndex)) > 0 && array.get(index).compareTo(array.get(leftIndex))>0){
+                array.swap(index,leftIndex);
+                siftUp(leftIndex);
+            }
+
+            if(array.get(rightIndex).compareTo(array.get(leftIndex)) > 0 && array.get(index).compareTo(array.get(rightIndex))>0){
+                array.swap(index,rightIndex);
+                siftUp(rightIndex);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -82,6 +112,19 @@ public class MaxHeap<E extends Comparable<E>> {
 
     public int rightIndex(int index){
         return 2*index +1;
+    }
+
+    public String toString(){
+        StringBuilder result = new StringBuilder();
+        try{
+            for (int i=0;i<=getSize();i++){
+                result.append(array.get(i)+".");
+            }
+
+        }catch (Exception e){
+
+        }
+        return result.toString();
     }
 
 }
