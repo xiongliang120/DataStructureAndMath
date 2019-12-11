@@ -19,6 +19,7 @@ import com.xiongliang.pratice.DynamicArray.Array;
  *  Replace --- 取出最大元素后，放入一个新的元素
  *
  *  heapity --- 将任意数组整理成堆的形状
+ *
  * */
 public class MaxHeap<E extends Comparable<E>> {
     public Array<E> array;
