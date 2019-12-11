@@ -63,12 +63,12 @@ public class MaxHeap<E extends Comparable<E>> {
 
 
     /**
-     * 删除元素
-     * @param e
+     * 取出最大元素
+     *
      */
-    public void remove(E e){
+    public void remove(){
         try{
-            array.swap(0,getSize());
+            array.swap(0,getSize()-1);
             array.removeLast();
             siftDown(0);
         }catch (Exception exception){
@@ -83,14 +83,14 @@ public class MaxHeap<E extends Comparable<E>> {
         try{
             int leftIndex = leftIndex(index);
             int rightIndex = rightIndex(index);
-            if(array.get(leftIndex).compareTo(array.get(rightIndex)) > 0 && array.get(index).compareTo(array.get(leftIndex))>0){
+            if(leftIndex < array.getSize()-1 && array.get(leftIndex).compareTo(array.get(rightIndex)) > 0 && array.get(leftIndex).compareTo(array.get(index))>0){
                 array.swap(index,leftIndex);
-                siftUp(leftIndex);
+                siftDown(leftIndex);
             }
 
-            if(array.get(rightIndex).compareTo(array.get(leftIndex)) > 0 && array.get(index).compareTo(array.get(rightIndex))>0){
+            if(leftIndex < array.getSize()-1 && array.get(rightIndex).compareTo(array.get(leftIndex)) > 0 && array.get(rightIndex).compareTo(array.get(index))>0){
                 array.swap(index,rightIndex);
-                siftUp(rightIndex);
+                siftDown(rightIndex);
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -114,7 +114,7 @@ public class MaxHeap<E extends Comparable<E>> {
     }
 
     public int rightIndex(int index){
-        return 2*index +1;
+        return 2*index +2;
     }
 
     public String toString(){

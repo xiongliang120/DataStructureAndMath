@@ -11,5 +11,8 @@ public class Main {
 
         System.out.println(maxHeap.toString());
 
+        maxHeap.remove();
+        System.out.println(maxHeap.toString());
+
     }
 }
