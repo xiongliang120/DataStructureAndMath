@@ -38,7 +38,7 @@ public class MaxHeap<E extends Comparable<E>> {
      */
     public void add(E e){
         array.add(e);
-        siftUp(getSize());
+        siftUp(getSize() -1);
     }
 
     /**
@@ -46,11 +46,13 @@ public class MaxHeap<E extends Comparable<E>> {
      */
     public void siftUp(int index){
         try{
-            int parentIndex = parentIndex(index);
-            if(array.get(index).compareTo(array.get(parentIndex)) > 0){
-                E tmpE = array.get(parentIndex);
-                array.swap(index,parentIndex);
-                siftUp(parentIndex);
+            if(index > 0){
+                int parentIndex = parentIndex(index);
+                if(array.get(index).compareTo(array.get(parentIndex)) > 0){
+                    E tmpE = array.get(parentIndex);
+                    array.swap(index,parentIndex);
+                    siftUp(parentIndex);
+                }
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -118,7 +120,7 @@ public class MaxHeap<E extends Comparable<E>> {
     public String toString(){
         StringBuilder result = new StringBuilder();
         try{
-            for (int i=0;i<=getSize();i++){
+            for (int i=0;i<getSize();i++){
                 result.append(array.get(i)+".");
             }
 
