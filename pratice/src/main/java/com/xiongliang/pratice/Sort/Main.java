@@ -7,5 +7,12 @@ public class Main {
         BubbleSort bubbleSort = new BubbleSort();
         bubbleSort.sort(array);
         bubbleSort.printArray(array);
+//        Integer a = 1;
+//        Integer b =1;
+//        System.out.println("a ="+a.hashCode()+"b="+b.hashCode());
+//
+//        String c = "11";
+//        String d = "11";
+//        System.out.println("c ="+c.hashCode()+"d="+d.hashCode());
     }
 }

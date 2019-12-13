@@ -11,11 +11,11 @@ public class BubbleSort {
     public void sort(int[] sort){
         if (sort != null && sort.length > 0){  //这种写法效率有点低
             for (int i=0;i<sort.length;i++){
-                for (int j=i+1;j<sort.length;j++){
-                    if(sort[i] > sort[j]){
+                for (int j=0;j<sort.length-1 -i;j++){
+                    if(sort[j] > sort[j+1]){
                         int tmp = sort[j];
-                        sort[j] = sort[i];
-                        sort[i] = tmp;
+                        sort[j] = sort[j+1];
+                        sort[j+1] = tmp;
                     }
                 }
             }
