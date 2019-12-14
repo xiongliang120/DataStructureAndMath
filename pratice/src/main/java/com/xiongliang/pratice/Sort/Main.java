@@ -3,7 +3,7 @@ package com.xiongliang.pratice.Sort;
 
 public class Main {
     public static void main(String args[]){
-        int[] array = new int[]{2,8,4,10,5,23,9,13};
+        int[] array = new int[]{2,8,4,10,5,23,9,13,7,45,6};
 //        System.out.println("冒泡排序");
 //        BubbleSort bubbleSort = new BubbleSort();
 //        bubbleSort.sort(array);
