@@ -9,10 +9,15 @@ public class Main {
 //        bubbleSort.sort(array);
 //        bubbleSort.printArray(array);
 
-        System.out.println("选择排序");
-        SelectionSort selectionSort = new SelectionSort();
-        selectionSort.sort(array);
-        selectionSort.printArray(array);
+//        System.out.println("选择排序");
+//        SelectionSort selectionSort = new SelectionSort();
+//        selectionSort.sort(array);
+//        selectionSort.printArray(array);
+
+        System.out.println("插入排序");
+        InsertionSort insertionSort = new InsertionSort();
+        insertionSort.sort(array);
+        insertionSort.printArray(array);
 
     }
 }
