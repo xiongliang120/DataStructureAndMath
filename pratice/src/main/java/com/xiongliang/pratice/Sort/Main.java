@@ -14,10 +14,15 @@ public class Main {
 //        selectionSort.sort(array);
 //        selectionSort.printArray(array);
 
-        System.out.println("插入排序");
-        InsertionSort insertionSort = new InsertionSort();
-        insertionSort.sort(array);
-        insertionSort.printArray(array);
+//        System.out.println("插入排序");
+//        InsertionSort insertionSort = new InsertionSort();
+//        insertionSort.sort(array);
+//        insertionSort.printArray(array);
+
+        System.out.println("希尔排序");
+        ShellSort shellSort = new ShellSort();
+        shellSort.sort(array);
+        shellSort.printArray(array);
 
     }
 }
