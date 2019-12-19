@@ -16,14 +16,29 @@ public class ShellSort {
         }
     }
 
+//    public void insert(int arr[],int gap,int i){
+//        int inserted = arr[i];
+//        int j;
+//        for (j = i -gap; j >=0 && inserted < arr[j];j-=gap){
+//            arr[j+gap] = arr[j];
+//        }
+//        arr[j+gap] = inserted;
+//    }
+
     public void insert(int arr[],int gap,int i){
-        int inserted = arr[i];
-        int j;
-        for (j = i -gap; j >=0 && inserted < arr[j];j-=gap){
-            arr[j+gap] = arr[j];
+        int current = arr[i];
+        int k = i-gap;
+        while(k >= 0){
+            if(arr[k] > current){
+                int tmp = arr[k];
+                arr[k] = arr[k+gap];
+                arr[k+gap] = tmp;
+            }
+            k-=gap;
         }
-        arr[j+gap] = inserted;
     }
+
+
 
     public void printArray(int[] sort){
         if(sort != null){
