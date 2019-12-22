@@ -19,10 +19,15 @@ public class Main {
 //        insertionSort.sort(array);
 //        insertionSort.printArray(array);
 
-        System.out.println("希尔排序");
-        ShellSort shellSort = new ShellSort();
-        shellSort.sort(array);
-        shellSort.printArray(array);
+//        System.out.println("希尔排序");
+//        ShellSort shellSort = new ShellSort();
+//        shellSort.sort(array);
+//        shellSort.printArray(array);
+
+        System.out.println("快速排序");
+        QuickSort quickSort = new QuickSort();
+        quickSort.quickSort(array,0,array.length-1);
+        quickSort.printArray(array);
 
     }
 }
