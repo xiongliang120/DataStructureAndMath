@@ -24,10 +24,15 @@ public class Main {
 //        shellSort.sort(array);
 //        shellSort.printArray(array);
 
-        System.out.println("快速排序");
-        QuickSort quickSort = new QuickSort();
-        quickSort.quickSort(array,0,array.length-1);
-        quickSort.printArray(array);
+//        System.out.println("快速排序");
+//        QuickSort quickSort = new QuickSort();
+//        quickSort.quickSort(array,0,array.length-1);
+//        quickSort.printArray(array);
+
+        System.out.println("堆排序");
+        HeapSort heapSort = new HeapSort();
+        heapSort.sort(array);
+        heapSort.printArray(array);
 
     }
 }

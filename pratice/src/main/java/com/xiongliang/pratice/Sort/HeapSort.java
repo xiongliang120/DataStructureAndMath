@@ -13,9 +13,50 @@ package com.xiongliang.pratice.Sort;
  */
 public class HeapSort {
     /**
-     * 将数组保持最大堆特性
+     * 将数组保持最大堆特性, 保证每个父节点大于其左右子节点
      */
-    public void heapSort(int arr[] ){
+    public void heapSort(int arr[],int end){
+         for(int i= (end-1)/2; i>=0;i--){
+             int leftIndex = 2*i +1;
+             int rightIndex =2*i +2;
 
+             if(arr[leftIndex] > arr[i]){ //左子节点与父节点交换
+                 int tmp = arr[i];
+                 arr[i] = arr[leftIndex];
+                 arr[leftIndex] = tmp;
+             }
+
+             if(arr[rightIndex] > arr[i]){  //右子节点与父节点交换
+                 int tmp = arr[i];
+                 arr[i] = arr[rightIndex];
+                 arr[rightIndex] = tmp;
+             }
+         }
     }
+
+    //递归去做
+    public void sortRecure(int arr[],int end){
+        if(end < 2){
+            return;
+        }
+        heapSort(arr,end);
+        int tmp = arr[0];
+        arr[0] = arr[end];
+        arr[end] = tmp;
+        sortRecure(arr,end-1);
+    }
+
+    public void sort(int arr[]){
+        sortRecure(arr,arr.length -1);
+    }
+
+    public void printArray(int[] sort){
+        if(sort != null){
+            for (int i=0;i<sort.length;i++){
+                System.out.print(sort[i]+".");
+            }
+        }
+    }
+
+
 }
