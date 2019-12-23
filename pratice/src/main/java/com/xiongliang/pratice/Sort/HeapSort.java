@@ -6,10 +6,16 @@ package com.xiongliang.pratice.Sort;
  * 2) 将arr[0] 和 arr[length -1] 进行交换
  * 3) 将0到length-2 之间元素构建最大堆，将arr[0]与arr[length -2]进行交换 递归执行
  *
- *   小标n 节点 其左子树小标为2n +1 , 右子树是2n+2
+ *   下标为n 的节点 其左子树小标为2n +1 , 右子树是2n+2, 最底层最右边的叶子节点为end,最小的非叶子节点为(end-1)/2
  *
  *  https://www.cnblogs.com/niuyourou/p/11995132.html
  *
  */
 public class HeapSort {
+    /**
+     * 将数组保持最大堆特性
+     */
+    public void heapSort(int arr[] ){
+
+    }
 }
