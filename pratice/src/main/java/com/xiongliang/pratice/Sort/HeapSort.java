@@ -20,26 +20,31 @@ public class HeapSort {
              int leftIndex = 2*i +1;
              int rightIndex =2*i +2;
 
-             if(arr[leftIndex] > arr[i]){ //左子节点与父节点交换
-                 int tmp = arr[i];
-                 arr[i] = arr[leftIndex];
-                 arr[leftIndex] = tmp;
+             if(leftIndex <= end){
+                 if(arr[leftIndex] > arr[i]){ //左子节点与父节点交换
+                     int tmp = arr[i];
+                     arr[i] = arr[leftIndex];
+                     arr[leftIndex] = tmp;
+                 }
              }
 
-             if(arr[rightIndex] > arr[i]){  //右子节点与父节点交换
-                 int tmp = arr[i];
-                 arr[i] = arr[rightIndex];
-                 arr[rightIndex] = tmp;
+             if(rightIndex <= end){
+                 if(arr[rightIndex] > arr[i]){  //右子节点与父节点交换
+                     int tmp = arr[i];
+                     arr[i] = arr[rightIndex];
+                     arr[rightIndex] = tmp;
+                 }
              }
+
          }
     }
 
     //递归去做
     public void sortRecure(int arr[],int end){
-        if(end < 2){
+        heapSort(arr,end);
+        if(end < 0){
             return;
         }
-        heapSort(arr,end);
         int tmp = arr[0];
         arr[0] = arr[end];
         arr[end] = tmp;
