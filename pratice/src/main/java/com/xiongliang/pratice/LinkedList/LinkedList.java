@@ -4,6 +4,8 @@ package com.xiongliang.pratice.LinkedList;
  * 链表
  * 1) 线性结构，每个节点都有指向下个节点的引用
  * 2) 支持增删改查
+ *
+ *  时间复杂度O(n)
  */
 public class LinkedList<E> {
     //链表存储数据个数
