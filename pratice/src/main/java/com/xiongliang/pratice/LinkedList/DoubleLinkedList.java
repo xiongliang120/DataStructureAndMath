@@ -1,24 +1,26 @@
 package com.xiongliang.pratice.LinkedList;
 
 /**
- * 单链表
- * 1) 线性结构，每个节点都有指向下个节点的引用
+ * 双链表
+ * 1) 线性结构，每个节点都有指向下个节点的引用，上一个节点的引用
  * 2) 支持增删改查
  *
  *  时间复杂度O(n)
  */
-public class LinkedList<E> {
+public class DoubleLinkedList<E> {
     //链表存储数据个数
     private int size;
     private Node virtual;
 
     public class Node{
         private E e;
+        private Node pre;
         private Node next;
 
-        public Node(E e,Node node){
+        public Node(E e,Node pre,Node next){
             this.e = e;
-            this.next = node;
+            this.next = next;
+            this.pre = pre;
         }
 
         public String toString(){
@@ -26,8 +28,8 @@ public class LinkedList<E> {
         }
     }
 
-    public LinkedList(){
-        virtual = new Node(null,null);
+    public DoubleLinkedList(){
+        virtual = new Node(null,null,null);
         size = 0;
     }
 
@@ -47,9 +49,15 @@ public class LinkedList<E> {
         for (int i=0;i<index;i++){
             preNode = preNode.next;
         }
-        Node tmpNode = preNode.next;
-        Node node = new Node(e,tmpNode);
-        preNode.next = node;
+        Node tmpNextNode = preNode.next;
+        Node node = new Node(e,preNode,tmpNextNode);
+        if(preNode != null){
+            preNode.next = node;
+        }
+
+        if(tmpNextNode != null){
+            tmpNextNode.pre = node;
+        }
         size ++;
     }
 
@@ -77,6 +85,7 @@ public class LinkedList<E> {
         }
         Node tmpNode = preNode.next.next;
         preNode.next = tmpNode;
+        tmpNode.pre = preNode;
         size --;
     }
 
@@ -135,7 +144,7 @@ public class LinkedList<E> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("链表容量="+size);
+        sb.append("双链表容量="+size);
         Node preNode = virtual;
         for (int i=0;i<size;i++){
             preNode = preNode.next;
