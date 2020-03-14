@@ -1,11 +1,16 @@
 package com.xiongliang.pratice.BinarySearchTree;
 
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingDeque;
+
 /**
  * 二分搜索树
  * 1) 非线性结构, 满足每个节点值大于其左子树所有节点的值，并且小于其右子树所有节点的值
  * 2) 前序遍历， 先遍历根节点，接着遍历左子树，再遍历右子树
  * 3) 中序遍历， 先遍历左子树，接着遍历根节点，最后遍历右子树
  * 4) 后序遍历，先遍历左子树，接着遍历右子树，最后遍历根节点
+ * 5) 层序遍历，将根结点的左右子结点分别放入队列, 然后移出第一个,接着将该结点的左右子结点添加到队列中,紧接着移出下一个元素，并将该结点的左右子结点分别加入队列,依次类推。
+ * 
  * @param <E>
  */
 public class BST<E extends Comparable<E>> {
@@ -228,6 +233,39 @@ public class BST<E extends Comparable<E>> {
         System.out.print("value=" + node.e);
     }
 
+
+    Queue<Node> queue = new LinkedBlockingDeque<>();
+    /***
+     * 层序遍历
+     */
+    public void sequence(){
+        System.out.println("\n层序遍历");
+        sequenceOrder(rootNode);
+        while (!queue.isEmpty()){
+            Node node = queue.poll();
+            System.out.print("value="+ node.e);
+        }
+    }
+
+
+
+    public void sequenceOrder(Node node){
+        if(node == null){
+            return;
+        }
+
+        System.out.print("value="+ node.e);
+
+        if(node.left != null){
+            queue.add(node.left);
+        }
+
+        if(node.right != null){
+            queue.add(node.right);
+        }
+
+        sequenceOrder(queue.poll());
+    }
 
     public String toString() {
         return "";
