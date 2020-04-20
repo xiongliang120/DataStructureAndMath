@@ -7,6 +7,18 @@ package com.xiongliang.pratice.Sort;
  * 3) 分别对基准元素的左和右子序列执行上诉1)2)操作
  *
  * https://blog.csdn.net/shujuelin/article/details/82423852
+ *
+ * 快排复杂度计算
+ * 递归算法复杂度公式 T[n] = 2T[n/2] + n
+ * 第一次 n = n
+ * 第二次 n = n/(2^1)
+ * 第三次 n = n / (2^2)
+ * 第m次  n = n / (2^(m-1)),直至最后T[1],即T[n] = 2*(2*2....T(1)), T(n) = 2^m T[1] + mn
+ * T[n/z^m] = T[1] --> n = 2^m, 即可得出 m = logn;
+ * 结合上面公式得，T(n) = 2^m T[1]+ nlogn = n + nlogn
+ *
+ *
+ * https://blog.csdn.net/qq_36653505/article/details/82256382
  */
 public class QuickSort {
     public void quickSort(int arr[], int left, int right){
