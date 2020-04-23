@@ -5,11 +5,15 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.ActivityManager;
+import android.app.IntentService;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Debug;
+import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,8 +21,13 @@ import android.widget.Button;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,10 +35,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        ActivityManager.RunningTaskInfo
+//        ActivityManager.RunningAppProcessInfo
+        Looper.getMainLooper().setMessageLogging();
         setContentView(R.layout.activity_main);
         Button button = findViewById(R.id.button);
         Button button1 = findViewById(R.id.button1);
         applyPermission();
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

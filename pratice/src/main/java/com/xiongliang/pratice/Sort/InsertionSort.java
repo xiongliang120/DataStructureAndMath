@@ -12,9 +12,8 @@ public class InsertionSort {
 
     public void sort(int[] sort){
         int preIndex = 0;  //前一个元素
-        int currentIndex = 1; //当前元素
 
-        for(int i=currentIndex;i< sort.length;i++){
+        for(int i=1;i< sort.length;i++){
             preIndex = i-1;
             while (preIndex >= 0 && sort[preIndex] > sort[preIndex+1]){
                 int tmp = sort[preIndex];
