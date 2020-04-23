@@ -29,6 +29,8 @@ public class Main {
         bst.in();
         //后序遍历
         bst.post();
+        //层序遍历
+        bst.sequence();
 
         //删除元素
         bst.removeElement(37);

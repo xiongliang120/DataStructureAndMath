@@ -4,7 +4,7 @@ package com.xiongliang.pratice.DynamicArray;
  * 动态数组
  * 1) 数组的容量可变
  * 2) 数组支持 增删改查
- *
+ *  时间复杂度 O(n)
  * @param <E>
  */
 public class Array<E> {
