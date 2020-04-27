@@ -8,7 +8,7 @@ package com.xiongliang.pratice.LeetCode;
  * 输出：7 -> 0 -> 8
  * 原因：342 + 465 = 807
  *
- *  解题思路：链表尾部开始对应的每个元素相加,判断进位
+ *  解题思路：链表头部开始对应的每个元素相加,判断进位
  *
  */
 public class LeetCode2 {
