@@ -9,6 +9,7 @@ import android.app.ActivityManager;
 import android.app.IntentService;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Debug;
 import android.os.Handler;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Button button1 = findViewById(R.id.button1);
         applyPermission();
 
+        MediaPlayer
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
