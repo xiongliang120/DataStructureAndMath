@@ -13,7 +13,8 @@ import java.util.Set;
  * 思路：
  * 1： 暴力法， 时间复杂度O(n^3), 空间复杂度O(n)->空间复杂度可以通过从两边往中间遍历判断优化为O(1)
  *
- * 2： 窗口滑动法, Map<String,Integer>, char 和 position+1, start和end, 当遇到重复时,更新start值为新重复的值。
+ * 2： 窗口滑动法, Map<String,Integer>, char 和 position+1, start, 当遇到重复时,更新start值为新重复的值,ans 为最长不含重复字符的子串长度,
+ *    ans = (i-start) +1
  *   时间复杂度O(n),空间复杂度O(n)
  *
  * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/hua-jie-suan-fa-3-wu-zhong-fu-zi-fu-de-zui-chang-z/

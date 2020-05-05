@@ -9,7 +9,7 @@ package com.xiongliang.pratice.LeetCode;
  * 原因：342 + 465 = 807
  *
  *  解题思路：链表头部开始对应的每个元素相加,判断进位
- *
+ *  时间复杂度为O(max(m,n)), 空间复杂度为O(max(m,n)), m,n 分别为两个链表的长度。
  */
 public class LeetCode2 {
     public static void main(String args[]){
