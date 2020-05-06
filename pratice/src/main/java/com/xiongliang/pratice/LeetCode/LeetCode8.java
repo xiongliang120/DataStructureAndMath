@@ -5,6 +5,6 @@ package com.xiongliang.pratice.LeetCode;
  */
 public class LeetCode8 {
     public static void main(String args[]) {
-        
+
     }
 }
