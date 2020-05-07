@@ -22,14 +22,15 @@ public class LeetCode7 {
 
         for (int i = 0; i < str.length() ; i++) {
             int num = str.charAt(i)- '0';
-            if(result*10+ num > Integer.MAX_VALUE){
+            if(result*10 * flag + num*flag > Integer.MAX_VALUE){
                 result = Integer.MAX_VALUE;
+            }else if(result*10 * flag + num*flag < Integer.MIN_VALUE){
+                result = Integer.MIN_VALUE;
             }else {
-                result = result * 10 + num;
+                result = result * 10 * flag + num * flag;
             }
         }
 
-        result = result * flag;
 
         if(result >Integer.MAX_VALUE){
             return Integer.MAX_VALUE;
