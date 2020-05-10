@@ -7,6 +7,7 @@ package com.xiongliang.pratice.LeetCode;
  * 2.双指针法
  *  面积 = index差 * 最短的高度
  *  从左右index开始,维持最大index差,寻找最短高,不断向中间靠拢, 找出最大的面积
+ *  时间复杂度 O(n),空间复杂度O(1)
  */
 public class LeetCode10 {
     public static void main(String args[]) {
