@@ -3,6 +3,7 @@ package com.xiongliang.pratice.LeetCode;
 import java.util.Stack;
 
 /**
+ * 有效的括号
  * 给定一个只包含 '(' 和 ')' 的字符串，找出最长的包含有效括号的子串的长度
  * 例如："(()" 长度为2； ")()())" 长度为4
  *
