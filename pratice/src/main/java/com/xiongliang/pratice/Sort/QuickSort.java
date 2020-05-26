@@ -10,9 +10,6 @@ package com.xiongliang.pratice.Sort;
  *
  * 快排复杂度计算
  * 递归算法复杂度公式 T[n] = 2T[n/2] + n
- * 第一次 n = n
- * 第二次 n = n/(2^1)
- * 第三次 n = n / (2^2)
  * 第m次  n = n / (2^(m-1)),直至最后T[1],即T[n] = 2*(2*2....T(1)), T(n) = 2^m T[1] + mn
  * T[n/z^m] = T[1] --> n = 2^m, 即可得出 m = log2 N;
  * 结合上面公式得，T(n) = 2^m T[1]+ nlog2 N = n + nlog2 N = nlog2 N.
