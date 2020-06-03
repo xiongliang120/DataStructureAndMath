@@ -24,12 +24,42 @@ public class LeetCode19 {
         twoNode.next = twoNode1;
         twoNode1.next = twoNode2;
         twoNode2.next = twoNode3;
-        addNode(oneNode,twoNode);
+        ListNode resultNode = addNode(oneNode,twoNode);
+
+        //打印结果
+        while (resultNode !=null){
+            System.out.println("node="+resultNode.val);
+            resultNode = resultNode.next;
+        }
 
     }
 
-    public static void addNode(ListNode oneNode,ListNode twoNode){
-
+    public static ListNode addNode(ListNode oneNode,ListNode twoNode){
+            ListNode preNode = new ListNode(0);
+            ListNode resultNode = preNode;
+            while (oneNode != null || twoNode != null){
+                if(oneNode == null){
+                    resultNode.next = twoNode;
+                    twoNode = twoNode.next;
+                }else if(twoNode == null){
+                    resultNode.next = oneNode;
+                    oneNode = oneNode.next;
+                }else{
+                    if(oneNode.val > twoNode.val){
+                        resultNode.next = oneNode;
+                        oneNode = oneNode.next;
+                    }else if(oneNode.val == twoNode.val){
+                        resultNode.next = oneNode;
+                        oneNode = oneNode.next;
+                        twoNode = twoNode.next;
+                    }else{
+                        resultNode.next = twoNode;
+                        twoNode = twoNode.next;
+                    }
+                }
+                resultNode = resultNode.next;
+            }
+            return preNode;
     }
 
     public static class ListNode {
