@@ -46,15 +46,15 @@ public class LeetCode19 {
                     oneNode = oneNode.next;
                 }else{
                     if(oneNode.val > twoNode.val){
-                        resultNode.next = oneNode;
-                        oneNode = oneNode.next;
+                        resultNode.next = twoNode;
+                        twoNode = twoNode.next;
                     }else if(oneNode.val == twoNode.val){
                         resultNode.next = oneNode;
                         oneNode = oneNode.next;
                         twoNode = twoNode.next;
                     }else{
-                        resultNode.next = twoNode;
-                        twoNode = twoNode.next;
+                        resultNode.next = oneNode;
+                        oneNode = oneNode.next;
                     }
                 }
                 resultNode = resultNode.next;
