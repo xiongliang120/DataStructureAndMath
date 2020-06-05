@@ -38,13 +38,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        ActivityManager.RunningTaskInfo
 //        ActivityManager.RunningAppProcessInfo
-        Looper.getMainLooper().setMessageLogging();
         setContentView(R.layout.activity_main);
         Button button = findViewById(R.id.button);
         Button button1 = findViewById(R.id.button1);
         applyPermission();
-
-        MediaPlayer
+        testDelete();
+        ArrayList
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +71,28 @@ public class MainActivity extends AppCompatActivity {
 //        testAnr();
 //        testMath();
 //        testList();
+    }
+
+    private void testDelete(){
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        arrayList.add(2);
+        arrayList.add(3);
+        arrayList.add(4);
+        arrayList.add(5);
+
+
+        for (Integer str : arrayList){
+            if(str == 3 || str ==4 ){
+                arrayList.remove(str);
+            }
+        }
+
+        for (Integer str : arrayList){
+            Log.i("xiongliang","打印"+str);
+        }
+
+
     }
 
     /**
