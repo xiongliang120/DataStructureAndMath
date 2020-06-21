@@ -267,6 +267,26 @@ public class BST<E extends Comparable<E>> {
         sequenceOrder(queue.poll());
     }
 
+
+    /***
+     * 获取二分搜索树的最小深度， 深度优先搜索
+     * @return
+     */
+    public int getSmallDepth(Node node){
+        int min = 0;
+        if(node == null){
+            return 0;
+        }
+
+        if(node.left == null && node.right == null){
+            return 1;
+        }
+
+        if()
+
+
+    }
+
     public String toString() {
         return "";
     }
