@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         Button button1 = findViewById(R.id.button1);
         applyPermission();
         testDelete();
-        ArrayList
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
