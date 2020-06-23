@@ -12,7 +12,7 @@ import java.util.concurrent.LinkedBlockingDeque;
  * 3) 中序遍历， 先遍历左子树，接着遍历根节点，最后遍历右子树
  * 4) 后序遍历，先遍历左子树，接着遍历右子树，最后遍历根节点
  * 5) 层序遍历，将根结点的左右子结点分别放入队列, 然后移出第一个,接着将该结点的左右子结点添加到队列中,紧接着移出下一个元素，并将该结点的左右子结点分别加入队列,依次类推。
- * 
+ *
  * @param <E>
  */
 public class BST<E extends Comparable<E>> {
@@ -237,32 +237,32 @@ public class BST<E extends Comparable<E>> {
 
 
     Queue<Node> queue = new LinkedBlockingDeque<>();
+
     /***
      * 层序遍历
      */
-    public void sequence(){
+    public void sequence() {
         System.out.println("\n层序遍历");
         sequenceOrder(rootNode);
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             Node node = queue.poll();
-            System.out.print("value="+ node.e);
+            System.out.print("value=" + node.e);
         }
     }
 
 
-
-    public void sequenceOrder(Node node){
-        if(node == null){
+    public void sequenceOrder(Node node) {
+        if (node == null) {
             return;
         }
 
-        System.out.print("value="+ node.e);
+        System.out.print("value=" + node.e);
 
-        if(node.left != null){
+        if (node.left != null) {
             queue.add(node.left);
         }
 
-        if(node.right != null){
+        if (node.right != null) {
             queue.add(node.right);
         }
 
@@ -270,9 +270,9 @@ public class BST<E extends Comparable<E>> {
     }
 
 
-    public int getTreeSmallDepth(){
+    public int getTreeSmallDepth() {
         int smallDepth = getSmallDepth(rootNode);
-        System.out.println("xiongliang"+"打印最小深度="+smallDepth);
+        System.out.println("xiongliang" + "打印最小深度=" + smallDepth);
         return smallDepth;
     }
 
@@ -280,26 +280,50 @@ public class BST<E extends Comparable<E>> {
      * 获取二分搜索树的最小深度， 深度优先搜索 递归
      * @return
      */
-    public int getSmallDepth(Node node){
+    public int getSmallDepth(Node node) {
         int min = Integer.MAX_VALUE;
-        if(node == null){
+        if (node == null) {
             return 0;
         }
 
-        if(node.left == null && node.right == null){
+        if (node.left == null && node.right == null) {
             return 1;
         }
 
-        if(node.left != null){
-            min = Math.min(min,getSmallDepth(node.left));
+        if (node.left != null) {
+            min = Math.min(min, getSmallDepth(node.left));
         }
 
-        if(node.right != null){
-           min = Math.min(min,getSmallDepth(node.right));
+        if (node.right != null) {
+            min = Math.min(min, getSmallDepth(node.right));
         }
 
-        return min +1;
+        return min + 1;
 
+    }
+
+
+    public boolean checkTreeSymmetric(){
+        boolean symmetric = checkTreeSymmetric(rootNode.left,rootNode.right);
+        System.out.println("xiongliang 打印二叉树对称="+symmetric);
+        return symmetric;
+    }
+
+    /**
+     * 检查二叉树是否对称，即判断根节点的左右两个个节点a,b值是否相等, 然后递归判断其a左子树等于b的右子树并且a右子树等于b的左子树
+     *
+     * @return
+     */
+    public boolean checkTreeSymmetric(Node a, Node b) {
+        if (a == null && b == null){
+            return true;
+        }
+
+        if(a == null || b == null){
+            return false;
+        }
+
+        return a.e == b.e && checkTreeSymmetric(a.left,b.right) && checkTreeSymmetric(a.right,b.left);
     }
 
     public String toString() {
