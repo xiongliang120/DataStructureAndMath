@@ -1,5 +1,7 @@
 package com.xiongliang.pratice.BinarySearchTree;
 
+import android.util.Log;
+
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingDeque;
 
@@ -268,12 +270,18 @@ public class BST<E extends Comparable<E>> {
     }
 
 
+    public int getTreeSmallDepth(){
+        int smallDepth = getSmallDepth(rootNode);
+        System.out.println("xiongliang"+"打印最小深度="+smallDepth);
+        return smallDepth;
+    }
+
     /***
-     * 获取二分搜索树的最小深度， 深度优先搜索
+     * 获取二分搜索树的最小深度， 深度优先搜索 递归
      * @return
      */
     public int getSmallDepth(Node node){
-        int min = 0;
+        int min = Integer.MAX_VALUE;
         if(node == null){
             return 0;
         }
@@ -282,8 +290,15 @@ public class BST<E extends Comparable<E>> {
             return 1;
         }
 
-        if()
+        if(node.left != null){
+            min = Math.min(min,getSmallDepth(node.left));
+        }
 
+        if(node.right != null){
+           min = Math.min(min,getSmallDepth(node.right));
+        }
+
+        return min +1;
 
     }
 
