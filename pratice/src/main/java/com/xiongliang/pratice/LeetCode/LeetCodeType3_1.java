@@ -3,6 +3,8 @@ package com.xiongliang.pratice.LeetCode;
 import java.util.Stack;
 
 /**
+ * Type3 是栈相关
+ *
  * 有效的括号
  * 给定一个只包含 '(' 和 ')' 的字符串，找出最长的包含有效括号的子串的长度
  * 例如："(()" 长度为2； ")()())" 长度为4
@@ -14,7 +16,7 @@ import java.util.Stack;
  *  时间复杂度：O(n^3),空间复杂度为O(n)
  *
  */
-public class LeetCode1 {
+public class LeetCodeType3_1 {
     public static void main(String args[]){
         String str = "(()))()";
         int max = 0;
