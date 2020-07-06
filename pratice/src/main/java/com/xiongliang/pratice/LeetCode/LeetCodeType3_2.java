@@ -3,7 +3,7 @@ package com.xiongliang.pratice.LeetCode;
 import com.xiongliang.pratice.BinarySearchTree.BST;
 
 /**
- *  二叉树的中序遍历，前序遍历, 后序遍历
+ *  二叉树的中序遍历
  */
 public class LeetCodeType3_2 {
     public static void main(String args[]){
@@ -17,13 +17,5 @@ public class LeetCodeType3_2 {
 
         //中序遍历
         bst.in();
-
-        //前序遍历
-        bst.pre();
-
-        //后序遍历
-        bst.post();
-
-
     }
 }
