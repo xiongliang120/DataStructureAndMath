@@ -11,6 +11,9 @@ import java.util.PriorityQueue;
  *
  * 数组中第K个最大元素
  * 描述: 在未排序的数组中找到第K个最大的元素。
+ *
+ * 时间复杂度：O(n)
+ * 空间复杂度：O(k)
  */
 public class LeetCodeType4_1 {
     public static void main(String args[]){
