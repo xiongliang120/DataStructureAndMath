@@ -4,9 +4,10 @@ import java.util.PriorityQueue;
 
 /**
  * Type4 是 堆相关
- *
- * 特性:
- * 1) 节点i, 其父节点 parent(i) = (i-1) /2, 其左节点 left(i) = 2*i +1, 其右节点 right(i) = 2*i +2. (i 从0 计数)
+ * PriorityQueue(优先队列) 通过二叉小顶堆实现。保证每次取出的元素都是队列中权值最小的。
+ * add(),offer() 均是向优先队列中插入元素。
+ * element(),peek() 均是获取队首元素(最小)但不删除。
+ * remove(), poll() 均是获取并删除队首元素。
  *
  * 数组中第K个最大元素
  * 描述: 在未排序的数组中找到第K个最大的元素。
