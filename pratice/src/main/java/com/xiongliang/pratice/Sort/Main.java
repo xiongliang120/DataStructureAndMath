@@ -29,15 +29,15 @@ public class Main {
 //        quickSort.quickSort(array,0,array.length-1);
 //        quickSort.printArray(array);
 
-        System.out.println("堆排序");
-        HeapSort heapSort = new HeapSort();
-        heapSort.sort(array);
-//        heapSort.sort2(array);
-        heapSort.printArray(array);
+//        System.out.println("堆排序");
+//        HeapSort heapSort = new HeapSort();
+//        heapSort.sort(array);
+////        heapSort.sort2(array);
+//        heapSort.printArray(array);
 
-//          System.out.println("归并排序");
-//          MergeSort mergeSort = new MergeSort();
-//          mergeSort.sort(array);
-//          mergeSort.printArray(array);
+          System.out.println("归并排序");
+          MergeSort mergeSort = new MergeSort();
+          mergeSort.sort(array);
+          mergeSort.printArray(array);
     }
 }

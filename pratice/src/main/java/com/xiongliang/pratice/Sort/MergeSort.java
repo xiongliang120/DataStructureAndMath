@@ -8,6 +8,11 @@ package com.xiongliang.pratice.Sort;
  *    依次对比完之后，将剩余的元素移到tmp数组对应位置, 最后将tmp数组元素复制到array数组相应的位置
  * 3) 递归实现上诉步骤
  *
+ * 时间复杂度 O(Nlog2^N)
+ * O(n) = 2(n/2) + n, m次后, O(n) = 2^m O(1) + n*m, n/2^m = 1, m =log2^N
+ * O(n) = n + n*log2^N = nlog2^n
+ *
+ *
  *
  * https://blog.csdn.net/qq_36442947/article/details/81612870
  * https://blog.csdn.net/weixin_39651041/article/details/80010906
@@ -54,7 +59,7 @@ public class MergeSort {
             }
         }
 
-
+        //将组内剩余元素复制到数组中(组内元素默认是已经排序的)
         while(leftIndex <= middle){
             tmp[tmpIndex] = array[leftIndex];
             tmpIndex++;
