@@ -15,7 +15,10 @@ import java.util.PriorityQueue;
  *
  *  思路:
  *  先通过哈希表维护元素出现频率, 再通过最小堆找出前k高频率的元素
- *  PriorityQueue 自定义比较器
+ *  PriorityQueue 优先队列,二叉小顶堆实现,自定义比较器
+ *  add() 插入元素
+ *  element() 获取队首元素,但不删除元素
+ *  remove() 获取队首元素,并删除元素
  *
  */
 public class LeetCodeType4_2 {

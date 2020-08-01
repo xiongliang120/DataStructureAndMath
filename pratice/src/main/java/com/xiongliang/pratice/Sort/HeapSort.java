@@ -9,6 +9,13 @@ package com.xiongliang.pratice.Sort;
  *
  *   下标为n 的节点 其左子树小标为2n +1 , 右子树是2n+2, 最底层最右边的叶子节点为end,最小的非叶子节点为(end-1)/2
  *
+ *
+ *   方式二:
+ *   PriorityQueue 优先队列,底层是二叉最小堆实现
+ *   add() 插入元素
+ *   element() 获取队首元素,但不删除元素
+ *   remove() 获取队首元素,并删除元素
+ *
  *  https://www.cnblogs.com/niuyourou/p/11995132.html
  *
  */
