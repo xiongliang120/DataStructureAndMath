@@ -32,6 +32,7 @@ public class Main {
         System.out.println("堆排序");
         HeapSort heapSort = new HeapSort();
         heapSort.sort(array);
+//        heapSort.sort2(array);
         heapSort.printArray(array);
 
 //          System.out.println("归并排序");

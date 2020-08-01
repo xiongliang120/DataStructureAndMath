@@ -1,5 +1,8 @@
 package com.xiongliang.pratice.Sort;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 /**
  * 堆排序 -- 利用堆这种数据结构的特性(最大堆或最小堆), 即是完全二叉树 并且 某个节点总是大于(或者小于)其左右子节点,时间复杂度O(nLogN)
  * 1) 将整个数组构建为最大堆，此时arr[0]是数组中最大元素
@@ -7,7 +10,7 @@ package com.xiongliang.pratice.Sort;
  * 3) 将0到length-2 之间元素构建最大堆，此时arr[0]即第一步找出最大值外的最大值, 将arr[0]与arr[length -2]进行交换
  * 4) 递归执行,直至用来构建堆的元素仅剩arr[0],整个数组排序完毕
  *
- *   下标为n 的节点 其左子树小标为2n +1 , 右子树是2n+2, 最底层最右边的叶子节点为end,最小的非叶子节点为(end-1)/2
+ * (下标从0开始算)下标为n 的节点 其左子树小标为2n +1 , 右子树是2n+2, 最底层最右边的叶子节点为end,最小的非叶子节点为(end-1)/2
  *
  *
  *   方式二:
@@ -72,4 +75,28 @@ public class HeapSort {
     }
 
 
+    /**
+     * 方式2: 使用PriorityQueue 优先队列
+     * @param arr
+     */
+    public void sort2(int arr[]){
+        int length = arr.length;
+        int index = 0;
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(length, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1 - o2;
+            }
+        });
+
+        for (int i=0;i<length;i++){
+            priorityQueue.add(arr[i]);
+        }
+
+        while (priorityQueue.size() > 0){
+            int max = priorityQueue.remove();
+            arr[index] = max;
+            index ++;
+        }
+    }
 }
