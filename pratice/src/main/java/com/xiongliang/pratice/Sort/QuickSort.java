@@ -42,7 +42,7 @@ public class QuickSort {
                  arr[height] = t;
              }
          }
-        //low 和 height相遇,则交换基准
+        //low 和 height相遇,即low==height,则交换基准
         arr[left] = arr[low];
         arr[low] = temp;
 
