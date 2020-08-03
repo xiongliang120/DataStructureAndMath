@@ -23,6 +23,7 @@ public class LeetCodeType2_1 {
         ListNode twoNode = new ListNode(1);
         twoNode.next = new ListNode(2);
         twoNode.next.next = new ListNode(3);
+        twoNode.next.next.next = new ListNode(9);
 
         ListNode  resultNode =addNode(oneNode,twoNode).next;
 
@@ -46,9 +47,9 @@ public class LeetCodeType2_1 {
           ListNode currentNode = resultNode;
 
 
-          while(oneNode != null && twoNode != null){
-               int oneNum = oneNode.val;
-               int twoNum = twoNode.val;
+          while(oneNode != null || twoNode != null){
+               int oneNum = (oneNode != null)?oneNode.val:0;
+               int twoNum = (twoNode != null)?twoNode.val:0;
                int numResult = oneNum +twoNum;
 
                //进位添加
@@ -66,9 +67,10 @@ public class LeetCodeType2_1 {
                currentNode.next = new ListNode(numResult);
                currentNode = currentNode.next;
 
-               oneNode = oneNode.next;
-               twoNode = twoNode.next;
+               oneNode = (oneNode != null)?oneNode.next:null;
+               twoNode = (twoNode != null)?twoNode.next:null;
           }
+
 
           if(addNum > 0){
               currentNode.next = new ListNode(addNum);
