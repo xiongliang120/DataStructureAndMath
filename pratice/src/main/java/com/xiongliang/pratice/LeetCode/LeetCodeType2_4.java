@@ -9,8 +9,11 @@ package com.xiongliang.pratice.LeetCode;
  * 4->5->1->2->3->NULL.
  *
  * 思路：
- * 将旧链表连接成换,找到新的链表头尾，然后断开环。
- * 新的尾节点为 (n-k) % n
+ * 将旧链表连接成环,找到新的链表头尾，然后断开环。
+ * 新的头节点为 n- k% n, k%n 的目的是解决k>n的情况
+ * 新的尾节点为 n -k%n - 1
+ *
+ * 比如: 5 长度旋转2个, 在3->4 之间掐断, 4成头部,3成了尾部。
  *
  * 时间复杂度 O(n)
  * 空间复杂度O(1)
@@ -40,8 +43,6 @@ public class LeetCodeType2_4 {
             System.out.println("node="+resultNode.val);
             resultNode = resultNode.next;
         }
-
-
     }
 
     /**
@@ -52,16 +53,16 @@ public class LeetCodeType2_4 {
             return headNode;
         }
 
-        ListNode tailNode = headNode;  //首尾相连
+        ListNode tailNode = headNode;
         int n;
-        for (n=1; tailNode.next != null; n++){
+        for (n=1; tailNode.next != null; n++){ //先查找尾节点
              tailNode = tailNode.next;
         }
-        tailNode.next = headNode;
+        tailNode.next = headNode; //首节点和尾节点 相连
 
         ListNode  newtailNode = headNode;  //寻找新尾节点
         ListNode  newheadNode ;   //寻找新的头节点
-        for (int i=1; i< (n-k% n -1);i++){
+        for (int i=1; i <= (n- k%n -2);i++){
              newtailNode = newtailNode.next;
         }
         newheadNode = newtailNode.next;
