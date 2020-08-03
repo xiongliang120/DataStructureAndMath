@@ -7,7 +7,8 @@ package com.xiongliang.pratice.LeetCode;
  * 思路：
  * pre 虚拟节点指向头节点
  * 预设前指针start和后指针end, 两者都指向pre头节点, start 先移动n步后，然后start和end 一起移动直到start到链表尾部, 这时
- * end 与start 之间相差n个节点, end刚好在倒数n+1 位置上。
+ * end 与start 之间相差n个节点, end的位置刚好在倒数第N个上, 因为刚好要删除这个节点,需要移动到该节点的前一个节点才能删除，
+ * 所以循环条件是start.next != null
  *
  * 时间复杂度为 O(n)
  *
@@ -59,7 +60,7 @@ public class LeetCodeType2_2 {
         }
         end.next = end.next.next;
 
-        printNode(pre);
+        printNode(pre.next);
     }
 
     public static void printNode(ListNode resultNode){
