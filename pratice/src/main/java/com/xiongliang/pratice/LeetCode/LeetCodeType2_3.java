@@ -15,6 +15,7 @@ public class LeetCodeType2_3 {
         ListNode twoNode1 = new ListNode(12);
         ListNode twoNode2 = new ListNode(13);
         ListNode twoNode3 = new ListNode(14);
+        ListNode twoNode4 = new ListNode(15);
 
         oneNode.next = oneNode1;
         oneNode1.next = oneNode2;
@@ -24,6 +25,7 @@ public class LeetCodeType2_3 {
         twoNode.next = twoNode1;
         twoNode1.next = twoNode2;
         twoNode2.next = twoNode3;
+        twoNode3.next = twoNode4;
         ListNode resultNode = addNode(oneNode,twoNode);
 
         //打印结果
@@ -59,7 +61,7 @@ public class LeetCodeType2_3 {
                 }
                 resultNode = resultNode.next;
             }
-            return preNode;
+            return preNode.next;
     }
 
     public static class ListNode {
