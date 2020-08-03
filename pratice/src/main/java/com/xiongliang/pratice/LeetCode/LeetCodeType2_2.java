@@ -6,7 +6,7 @@ package com.xiongliang.pratice.LeetCode;
  *
  * 思路：
  * pre 虚拟节点指向头节点
- * start 默认等于pre, end 默认等于pre; start 先移动n步后，然后start和end 一起移动直到start到链表尾部, 这时
+ * 预设前指针start和后指针end, 两者都指向pre头节点, start 先移动n步后，然后start和end 一起移动直到start到链表尾部, 这时
  * end 与start 之间相差n个节点, end刚好在倒数n+1 位置上。
  *
  * 时间复杂度为 O(n)
