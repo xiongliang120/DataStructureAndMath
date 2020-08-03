@@ -244,10 +244,6 @@ public class BST<E extends Comparable<E>> {
     public void sequence() {
         System.out.println("\n层序遍历");
         sequenceOrder(rootNode);
-        while (!queue.isEmpty()) {
-            Node node = queue.poll();
-            System.out.print("value=" + node.e);
-        }
     }
 
 

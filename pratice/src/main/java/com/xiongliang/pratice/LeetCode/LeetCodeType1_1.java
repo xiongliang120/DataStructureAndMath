@@ -7,6 +7,11 @@ import com.xiongliang.pratice.BinarySearchTree.BST;
  *
  *  二叉树的层序遍历 所有节点， 基于二分搜索树
  *  层序遍历, 采用使用数据结构队列存储,先进先出, 每次从队列中取节点时，相应的将其左右子树添加到队列中。
+ *
+ *  LinkedBlockingDeque, 链表结构组成的双向堵塞队列
+ *  add(), 向队尾添加元素
+ *  poll(), 移除队首元素
+ *
  */
 public class LeetCodeType1_1 {
     public static void main(String args[]) {
