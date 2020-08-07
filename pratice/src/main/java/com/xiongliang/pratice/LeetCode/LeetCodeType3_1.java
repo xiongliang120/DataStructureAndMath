@@ -21,8 +21,8 @@ public class LeetCodeType3_1 {
         String str = "(()))()";
         int max = 0;
         for (int i=0;i<str.length();i++){
-            for (int k=i+2;k<str.length();k=k+2){
-                  String tmp = str.substring(i,k);
+            for (int k=i+2;k<str.length();k=k+2){ // 括号数必须是偶数
+                  String tmp = str.substring(i,k); //包前不包后
                   if(isVaild(tmp)){
                       max = Math.max(max,(k-i)/2);
                   }
