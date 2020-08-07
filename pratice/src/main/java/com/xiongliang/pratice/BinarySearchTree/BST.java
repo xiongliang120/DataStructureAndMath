@@ -20,9 +20,9 @@ public class BST<E extends Comparable<E>> {
     private Node rootNode;
 
     public class Node {
-        private E e;
-        private Node left;
-        private Node right;
+        public E e;
+        public Node left;
+        public Node right;
 
         public Node(E e, Node left, Node right) {
             this.e = e;
@@ -34,6 +34,14 @@ public class BST<E extends Comparable<E>> {
     public BST() {
         rootNode = null;
         size = 0;
+    }
+
+    /**
+     * 获取rootNode
+     * @return
+     */
+    public Node getRootNode(){
+        return rootNode;
     }
 
 

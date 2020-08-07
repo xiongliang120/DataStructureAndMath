@@ -2,8 +2,19 @@ package com.xiongliang.pratice.LeetCode;
 
 import com.xiongliang.pratice.BinarySearchTree.BST;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 /**
  *  二叉树的中序遍历
+ *
+ *  方式：
+ *  1: 递归处理, 先左,后根,最后右
+ *
+ *  2：栈
+ *
+ *
  */
 public class LeetCodeType3_2 {
     public static void main(String args[]){
@@ -17,5 +28,32 @@ public class LeetCodeType3_2 {
 
         //中序遍历
         bst.in();
+
+//        orderByStack(bst);
+    }
+
+    /**
+     * 基于栈的中序遍历
+     */
+    public static void orderByStack(BST<Integer> root){
+        List<Integer> list = new ArrayList<>();
+        BST.Node current = root.getRootNode();
+        Stack<BST.Node> stack = new Stack<>();
+
+        while (current != null || !stack.isEmpty()){
+            while (current != null){   //先遍历所有左节点
+                stack.push(current);
+                current = current.left;
+            }
+
+            current = stack.pop(); //获取所有左节点
+            list.add((Integer) current.e);
+
+            current = current.right;  //
+        }
+
+        for (int i=0;i<list.size();i++){
+            System.out.println("中序遍历="+list.get(i));
+        }
     }
 }
