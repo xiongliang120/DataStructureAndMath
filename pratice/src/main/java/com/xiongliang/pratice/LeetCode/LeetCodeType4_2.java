@@ -1,5 +1,7 @@
 package com.xiongliang.pratice.LeetCode;
 
+import android.util.Log;
+
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.PriorityQueue;
@@ -15,7 +17,7 @@ import java.util.PriorityQueue;
  *
  *  思路:
  *  先通过哈希表维护元素出现频率, 再通过最小堆找出前k高频率的元素
- *  PriorityQueue 优先队列,二叉小顶堆实现,自定义比较器
+ *  PriorityQueue 优先队列,二叉小顶堆实现,自定义比较器实现最大堆
  *  add() 插入元素
  *  element() 获取队首元素,但不删除元素
  *  remove() 获取队首元素,并删除元素
@@ -23,7 +25,7 @@ import java.util.PriorityQueue;
  */
 public class LeetCodeType4_2 {
     public static void main(String args[]){
-        int nums[] = {1,1,1,3,2,4,5,4,3,3};
+        int nums[] = {1,1,1,3,2,4,5,4,3,3,6,6,6,6};
         int k = 2;
         final HashMap<Integer,Integer> map = new HashMap<>();
         for (int i=0;i<nums.length;i++){
@@ -39,8 +41,7 @@ public class LeetCodeType4_2 {
         });
 
         for(Integer key:map.keySet()){
-            priorityQueue.offer(key);
-
+            priorityQueue.add(key);
             if(priorityQueue.size() > k){
                 priorityQueue.poll();
             }
