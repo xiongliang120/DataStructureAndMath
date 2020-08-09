@@ -4,7 +4,8 @@ import java.util.PriorityQueue;
 
 /**
  * Type4 是 堆相关
- * PriorityQueue(优先队列) 通过二叉小顶堆实现。保证每次取出的元素都是队列中权值最小的。
+ * PriorityQueue(优先队列) 通过二叉小顶堆实现。保证每次取出的元素都是队列中权值最小的;
+ * 可以存放大于K个元素
  * add(),offer() 均是向优先队列中插入元素。 满的队列,add会抛出异常, offer 会返回false
  * element(),peek() 均是获取队首元素(最小)但不删除。
  * remove(), poll() 均是获取并删除队首元素。
@@ -23,7 +24,7 @@ public class LeetCodeType4_1 {
         //默认小顶堆
         PriorityQueue<Integer> heap = new PriorityQueue<>(k);
         for (int i = 0; i < array.length; i++) {
-            heap.add(array[i]);
+            heap.offer(array[i]);
             if(heap.size() > k){
                 heap.poll();
             }
