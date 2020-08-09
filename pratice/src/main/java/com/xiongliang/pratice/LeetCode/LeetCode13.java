@@ -12,7 +12,7 @@ package com.xiongliang.pratice.LeetCode;
 
 public class LeetCode13 {
     public static void main(String args[]) {
-        String[] tmp = {"aaabbccccddd","aabbcdd","abbcdd"};
+        String[] tmp = {"aaabbccccddd","aabbcdd","aabbcdd"};
         System.out.println("打印最长公共字符串="+ maxStr(tmp));
 
     }

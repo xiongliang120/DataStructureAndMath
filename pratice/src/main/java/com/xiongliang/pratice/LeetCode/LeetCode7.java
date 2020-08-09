@@ -12,7 +12,7 @@ import java.nio.charset.IllegalCharsetNameException;
  */
 public class LeetCode7 {
     public static void main(String args[]) {
-        String str = "12345678910";
+        String str = "1234567891";
         System.out.println("打印整型="+transformationMethod(str));
     }
 

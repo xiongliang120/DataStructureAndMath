@@ -20,7 +20,7 @@ public class LeetCode3 {
 
 
     /***
-     * 暴力法
+     * 暴力法 ,循环判断所有字符串是否是回文
      * @param str
      */
     public static void method1(String str){
@@ -40,7 +40,7 @@ public class LeetCode3 {
     }
 
     /**
-     * 判断是否是回文串
+     * 判断是否是回文串, 对称字符是否一致, 不论奇偶
      * @param str
      * @return
      */

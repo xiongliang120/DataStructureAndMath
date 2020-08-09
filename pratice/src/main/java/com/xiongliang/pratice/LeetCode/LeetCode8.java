@@ -35,4 +35,19 @@ public class LeetCode8 {
         }
         return true;
     }
+
+    /**
+     * 将整数转字符串, 然后判断是否是回文串, 对称字符是否一致, 不论奇偶
+     * @param str
+     * @return
+     */
+    public static boolean isVaild(String str){
+        for (int i=0;i<str.length() /2;i++){
+            if(str.charAt(i) != str.charAt(str.length() - i -1)){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

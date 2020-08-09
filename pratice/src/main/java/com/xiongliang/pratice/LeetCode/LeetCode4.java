@@ -47,34 +47,8 @@ public class LeetCode4 {
         System.out.println("不含重复的最长字符串长度为="+max+"maxStart="+maxStart+"字符串为="+str.substring(maxStart,maxStart+max));
     }
 
-
     /**
-     * 窗口滑动法
-     */
-    public static int method2(String str){
-        int ans = 0; //最长不重复字符串大小
-        int start = 0;
-        Map<String,Integer> map = new HashMap<>();
-        for (int i = 0; i < str.length(); i++) {
-             if(map.containsKey(str.charAt(i))){
-                 start = i;
-             }
-
-             if((i-start) > ans){
-                 ans = i-start +1;
-             }
-
-             map.put(str.charAt(i)+"",i+1);
-
-        }
-
-        System.out.println("不含重复的最长字符串长度为="+ans+"字符串为="+str.substring(start,ans));
-        return ans;
-    }
-
-
-    /**
-     * 判断字符串是否重复
+     * 判断字符串是否重复, 使用 set 集合。
      * @param str
      * @return
      */
@@ -87,5 +61,30 @@ public class LeetCode4 {
         }
 
         return true;
+    }
+
+
+    /**
+     * 窗口滑动法
+     */
+    public static int method2(String str){
+        int ans = 0; //最长不重复字符串大小
+        int start = 0;
+        Map<String,Integer> map = new HashMap<>();
+        for (int i = 0; i < str.length(); i++) {
+            if(map.containsKey(str.charAt(i))){
+                start = i;
+            }
+
+            if((i-start) > ans){
+                ans = i-start +1;
+            }
+
+            map.put(str.charAt(i)+"",i+1);
+
+        }
+
+        System.out.println("不含重复的最长字符串长度为="+ans+"字符串为="+str.substring(start,ans));
+        return ans;
     }
 }
