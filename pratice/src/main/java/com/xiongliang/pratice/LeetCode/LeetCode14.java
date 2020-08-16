@@ -28,7 +28,7 @@ public class LeetCode14 {
         List<List<Integer>> list = new ArrayList<>();
 
         for (int i = 0; i < nums.length; i++) {
-             int head = i+1;
+             int head = i+1; // i的前面, 避免出现重复数据
              int tail = nums.length -1;
 
              while (head < tail){
