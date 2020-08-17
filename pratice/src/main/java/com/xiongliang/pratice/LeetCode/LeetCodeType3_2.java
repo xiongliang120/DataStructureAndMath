@@ -39,6 +39,8 @@ public class LeetCodeType3_2 {
         orderByStack(bst);
     }
 
+
+
     /**
      * 基于栈的中序遍历
      */
@@ -48,10 +50,10 @@ public class LeetCodeType3_2 {
         Stack<BST.Node> stack = new Stack<>();
 
 
-        //利用栈先进后出的特性
+        //利用栈先进后出的特性,将其左节点全部存在栈中,然后遍历栈中元素
         while (current != null || !stack.isEmpty()) {
 
-            while (current != null) {
+            while (current != null) { //循环往栈中添加左节点,利用先进后出的特性
                 stack.push(current);
                 current = current.left;
             }
