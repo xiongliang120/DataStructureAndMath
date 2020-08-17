@@ -12,7 +12,7 @@ public class BubbleSort {
         //从大到小,大的数据冒起来
         if (sort != null && sort.length > 0){  //这种写法效率有点低
             for (int i=0;i<sort.length;i++){
-                for (int j=0;j<sort.length-1 -i;j++){
+                for (int j=0;j<sort.length-1 -i;j++){  //最小/大的数据 放在数组最后一个元素
                     if(sort[j] > sort[j+1]){
                         int tmp = sort[j];
                         sort[j] = sort[j+1];
