@@ -21,10 +21,10 @@ package com.xiongliang.pratice.LeetCode;
 
 public class LeetCodeType2_4 {
     public static void main(String args[]) {
-        ListNode oneNode = new ListNode(7);
-        ListNode oneNode1 = new ListNode(8);
-        ListNode oneNode2 = new ListNode(9);
-        ListNode oneNode3 = new ListNode(10);
+        ListNode oneNode = new ListNode(7); //12
+        ListNode oneNode1 = new ListNode(8); //13
+        ListNode oneNode2 = new ListNode(9); //7
+        ListNode oneNode3 = new ListNode(10); //8
         ListNode oneNode4 = new ListNode(11);
         ListNode oneNode5 = new ListNode(12);
         ListNode oneNode6 = new ListNode(13);
@@ -62,7 +62,7 @@ public class LeetCodeType2_4 {
 
         ListNode  newtailNode = headNode;  //寻找新尾节点
         ListNode  newheadNode ;   //寻找新的头节点
-        for (int i=1; i <= (n- k%n -2);i++){
+        for (int i=1; i <= (n- k%n -1);i++){ //新的尾节点为n-k-1
              newtailNode = newtailNode.next;
         }
         newheadNode = newtailNode.next;
