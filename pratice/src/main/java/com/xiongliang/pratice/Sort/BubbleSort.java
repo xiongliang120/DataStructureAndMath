@@ -9,6 +9,7 @@ package com.xiongliang.pratice.Sort;
 
 public class BubbleSort {
     public void sort(int[] sort){
+        //从大到小,大的数据冒起来
         if (sort != null && sort.length > 0){  //这种写法效率有点低
             for (int i=0;i<sort.length;i++){
                 for (int j=0;j<sort.length-1 -i;j++){
