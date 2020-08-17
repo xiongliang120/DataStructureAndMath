@@ -3,7 +3,7 @@ package com.xiongliang.pratice.LeetCode;
 import com.xiongliang.pratice.BinarySearchTree.BST;
 
 /***
- *  Type1 是广度优先搜索相关
+ *  Type1 是广度优先搜索相关, 应用场景: 计算网络跳数； 深度优先搜索算法,其应用场景是: 拓扑排序
  *
  *  二叉树的层序遍历 所有节点， 基于二分搜索树
  *  层序遍历, 采用使用数据结构队列存储,先进先出, 每次从队列中取节点时，相应的将其左右子树添加到队列中。

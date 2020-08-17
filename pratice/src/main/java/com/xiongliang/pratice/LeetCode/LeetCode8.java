@@ -18,16 +18,17 @@ public class LeetCode8 {
     }
 
     public static boolean compareStartAndEnd(int num){
-        int div =1; //数字的位数
-        while (num /div >= 10){
+        int div =1; //数字的最高位数
+        while (num /div >= 10){  //计算数字的最高位数
             div = div * 10;
         }
+
 
         while (num >= 10){
             int start = num / div;
             int end = num % 10;
             if(start == end){
-                num = (num - start*div)/10;
+                num = (num - start*div)/10; //去掉首位和尾位
                 div = div/100;
             }else{
                 return false;
