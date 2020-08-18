@@ -80,7 +80,7 @@ public class HeapSort {
 
 
     /**
-     * 方式2: 使用PriorityQueue 优先队列
+     * 方式2: 使用PriorityQueue 优先队列, 直接将所有元素全部放入优先队列中
      * @param arr
      */
     public void sort2(int arr[]){
