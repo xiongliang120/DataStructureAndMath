@@ -1,7 +1,7 @@
 package com.xiongliang.pratice.Sort;
 
 /**
- * 归并排序原理:  采用分治法, 将已有序列的子序列合并,得到完全有序的序列,即先使每个序列有序,再使子序列段间有序。
+ * 归并排序原理:  采用分治法,递归实现,将已有序列的子序列合并,得到完全有序的序列,即先使每个序列有序,再使子序列段间有序。
  * 递归实现,时间复杂度O(nLog2 N)
  * 1) 先对数组进行拆分，一分为二, 然后对左右数组分别进行递归拆分。
  * 2）然后对拆分的数组进行递归合并，合并时,左右数组同起点index 对比，较小的放入tmp数组对应的位置;
@@ -46,8 +46,8 @@ public class MergeSort {
         int leftIndex= left;
         int rightIndex = middle + 1;
         int tmpIndex = left;
-
-        while(leftIndex <= middle && rightIndex <= right){
+        //123 456
+        while(leftIndex <= middle || rightIndex <= right){
             if(array[leftIndex] < array[rightIndex]){
                    tmp[tmpIndex] = array[leftIndex];
                    tmpIndex++;
