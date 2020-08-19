@@ -35,9 +35,9 @@ public class Main {
 ////        heapSort.sort2(array);
 //        heapSort.printArray(array);
 
-//          System.out.println("归并排序");
-//          MergeSort mergeSort = new MergeSort();
-//          mergeSort.sort(array);
-//          mergeSort.printArray(array);
+          System.out.println("归并排序");
+          MergeSort mergeSort = new MergeSort();
+          mergeSort.sort(array);
+          mergeSort.printArray(array);
     }
 }

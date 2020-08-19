@@ -47,7 +47,7 @@ public class MergeSort {
         int rightIndex = middle + 1;
         int tmpIndex = left;
         //123 456
-        while(leftIndex <= middle || rightIndex <= right){
+        while(leftIndex <= middle && rightIndex <= right){
             if(array[leftIndex] < array[rightIndex]){
                    tmp[tmpIndex] = array[leftIndex];
                    tmpIndex++;
