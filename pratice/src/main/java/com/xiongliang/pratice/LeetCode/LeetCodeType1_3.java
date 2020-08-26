@@ -4,7 +4,7 @@ import com.xiongliang.pratice.BinarySearchTree.BST;
 
 /**
  * 对称二叉树
- * 给定一个二叉树，检查它是否是镜像对称的
+ * 给定一个二叉树，检查它是否是镜像对称的,递归实现
  *
  * 时间复杂度： 遍历每个元素，因此是O(n)
  * 空间复杂度： 迭代次数为其高度logN, 空间复杂O(logN)
