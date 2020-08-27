@@ -13,8 +13,9 @@ package com.xiongliang.pratice.LeetCode;
  */
 public class LeetCode5 {
     public static void main(String args[]) {
-         int tmp = 121211;
-         System.out.println("打印是否是回文整数="+compareStartAndEnd(tmp));
+         int tmp = 11122111;
+//         System.out.println("打印是否是回文整数="+compareStartAndEnd(tmp));
+        System.out.println("打印是否是回文整数="+isVaild(tmp+""));
     }
 
     public static boolean compareStartAndEnd(int num){
