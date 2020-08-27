@@ -26,13 +26,13 @@ import java.util.PriorityQueue;
 public class LeetCodeType4_2 {
     public static void main(String args[]){
         int nums[] = {1,1,1,3,2,4,5,4,3,3,6,6,6,6};
-        int k = 2;
+        int k = 3;
         final HashMap<Integer,Integer> map = new HashMap<>();
         for (int i=0;i<nums.length;i++){
             map.put(nums[i],map.getOrDefault(nums[i],0)+1);
         }
 
-
+        //实现最大堆,每次取数顶元素后,都会进行重排序,保证数顶元素是最大的
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(k, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
