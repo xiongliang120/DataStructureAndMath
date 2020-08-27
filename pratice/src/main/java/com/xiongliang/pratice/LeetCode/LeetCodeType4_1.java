@@ -1,5 +1,6 @@
 package com.xiongliang.pratice.LeetCode;
 
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
@@ -21,7 +22,7 @@ public class LeetCodeType4_1 {
         int[] array = {3, 2, 3, 1, 2, 4, 5, 5, 6};
         int k = 3;
 
-        //默认小顶堆
+        //默认小顶堆, 通过遍历插入将前面最小的元素都移除, 最后留下的都是最大元素
         PriorityQueue<Integer> heap = new PriorityQueue<>(k);
         for (int i = 0; i < array.length; i++) {
             heap.offer(array[i]);
