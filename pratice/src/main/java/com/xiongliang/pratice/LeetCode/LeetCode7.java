@@ -1,41 +1,55 @@
 package com.xiongliang.pratice.LeetCode;
 
-import java.nio.charset.IllegalCharsetNameException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
- * 字符串转整型
- * 对每个字符进行转换
+ * 三数之和
+ * 给你一个包含n个整数的数组nums, 判断nums中是否存在三个元素a,b,c, 使得a+b+c =0, 找出所有满足条件且不重复的三元组
  *
- * 时间复杂度O(n), n为字符串长度
- * 空间复杂度O(1)
+ * 双指针方法
+ * 1: 先对数组进行排序
+ * 2：从左右开始往中间紧逼
+ *
+ * 时间复杂度:
+ *  数组排序复杂度 O(nLogN) + O(n^2) = O(n^2)
+ *
  *
  */
 public class LeetCode7 {
     public static void main(String args[]) {
-        String str = "1234567891";
-        System.out.println("打印整型="+transformationMethod(str));
+        int[] nums= {1,4,2,-1,0,-3};
+        addMethod(nums);
     }
 
-    public static int transformationMethod(String str){
-        int result = 0;
-        int flag = 1;  //正负判断, flag =1 为正, flag =-1 为负
-        if(str.contains("-")){
-            flag = -1;
+    public static void addMethod(int[] nums){
+        Arrays.sort(nums); //默认升序排序
+        List<List<Integer>> list = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+             int head = i+1; // i的前面, 避免出现重复数据
+             int tail = nums.length -1;
+
+             while (head < tail){
+                 int sum = -(nums[tail] + nums[head]);
+                 if(sum == nums[i]){
+                     ArrayList arrayList = new ArrayList();
+                     arrayList.add(head);
+                     arrayList.add(i);
+                     arrayList.add(tail);
+                     list.add(arrayList);
+                     System.out.println("打印三元数组="+nums[head]+"."+nums[i]+"."+nums[tail]);
+                 }
+
+                 if(sum <= nums[i]){
+                     tail--;
+                 }else{
+                     head++;
+                 }
+
+             }
         }
 
-        for (int i = 0; i < str.length() ; i++) {
-            int num = str.charAt(i)- '0';
-
-            if(result > (Integer.MAX_VALUE - num) /10){ //防止result*10 + num 越界
-                result = Integer.MAX_VALUE;
-            }else if(result < (Integer.MIN_VALUE + num)/10){
-                result = Integer.MIN_VALUE;
-            }else {
-                result = result * 10 * flag + num * flag;
-            }
-        }
-
-
-        return result;
     }
 }

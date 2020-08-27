@@ -11,7 +11,7 @@ package com.xiongliang.pratice.LeetCode;
  * 时间复杂度O(log10(n)), n 为整数大小
  * 空间复杂度O(1)
  */
-public class LeetCode8 {
+public class LeetCode5 {
     public static void main(String args[]) {
          int tmp = 121211;
          System.out.println("打印是否是回文整数="+compareStartAndEnd(tmp));
