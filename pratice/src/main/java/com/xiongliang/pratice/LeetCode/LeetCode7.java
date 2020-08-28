@@ -42,7 +42,7 @@ public class LeetCode7 {
                      System.out.println("打印三元数组="+nums[head]+"."+nums[i]+"."+nums[tail]);
                  }
 
-                 if(sum <= nums[i]){
+                 if(sum < nums[i]){
                      tail--;
                  }else{
                      head++;
