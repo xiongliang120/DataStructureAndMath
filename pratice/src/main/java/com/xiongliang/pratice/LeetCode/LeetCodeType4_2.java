@@ -32,7 +32,7 @@ public class LeetCodeType4_2 {
             map.put(nums[i],map.getOrDefault(nums[i],0)+1);
         }
 
-        //实现最大堆,每次取数顶元素后,都会进行重排序,保证数顶元素是最大的
+        //实现最小堆,每次取数顶元素后,都会进行重排序,保证数顶元素是最小的
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(k, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
