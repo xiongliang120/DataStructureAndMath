@@ -20,7 +20,7 @@ public class LeetCode6 {
 
     /**
      * 最长公共前缀
-     * String.indexOf(string), 返回字符串string 在String 中第一次出现的索引, 如果不存在,则返回-1.
+     * String.indexOf(string), 返回字符串string 在String 中的起始位置, 如果不存在,则返回-1.
      * @param str
      * @return
      */
