@@ -86,6 +86,7 @@ public class HeapSort {
     public void sort2(int arr[]){
         int length = arr.length;
         int index = 0;
+        //最大堆实现
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(length, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
