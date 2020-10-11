@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button button = findViewById(R.id.button);
         Button button1 = findViewById(R.id.button1);
-        applyPermission();
-        testDelete();
+//        applyPermission();
+//        testDelete();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        test11();
 //        testAnr();
 //        testMath();
 //        testList();
@@ -90,7 +91,32 @@ public class MainActivity extends AppCompatActivity {
         for (Integer str : arrayList){
             Log.i("xiongliang","打印"+str);
         }
+    }
 
+    private int count =0;
+    public void test11(){
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Log.i("xiongliang","打印Acount="+count);
+                count++;
+                Log.i("xiongliang","打印Acount="+count);
+            }
+        });
+
+
+        Thread thread2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Log.i("xiongliang","打印Bcount="+count);
+                count++;
+                Log.i("xiongliang","打印Bcount="+count);
+            }
+        });
+
+
+        thread1.start();
+        thread2.start();
 
     }
 

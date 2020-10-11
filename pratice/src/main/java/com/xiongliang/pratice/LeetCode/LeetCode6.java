@@ -12,7 +12,11 @@ package com.xiongliang.pratice.LeetCode;
 
 public class LeetCode6 {
     public static void main(String args[]) {
-        String[] tmp = {"aaabbccccddd","aabbcdd","aabbcdd"};
+        String[] tmp = {"aaabbccccddd","baabbcdd","aa"};
+
+        String tmpStr = "baabbcdd";
+        System.out.println("打印="+tmpStr.indexOf("aa"));
+
         System.out.println("打印最长公共字符串="+ maxStr(tmp));
 
     }
@@ -20,7 +24,7 @@ public class LeetCode6 {
 
     /**
      * 最长公共前缀
-     * String.indexOf(string), 返回字符串string 在String 中第一次出现的索引, 如果不存在,则返回-1.
+     * String.indexOf(string), 返回字符串string 在String 中第一次出现的索引, 如果不是第一个位置0,则不符合.
      * @param str
      * @return
      */
