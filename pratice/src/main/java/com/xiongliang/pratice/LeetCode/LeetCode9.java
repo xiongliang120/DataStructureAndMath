@@ -26,7 +26,7 @@ public class LeetCode9 {
      * @return
      */
     public boolean method2(){
-        return false
+        return false;
     }
 
 
