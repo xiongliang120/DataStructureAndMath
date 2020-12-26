@@ -3,10 +3,11 @@ package com.xiongliang.pratice.Sort;
 
 public class Main {
     public static void main(String args[]){
-        int[] array = new int[]{2,8,4,10,5,23,9,13,7,45,6};
+//        int[] array = new int[]{2,8,4,10,5,23,9,13,7,45,6};
+        int[] array = new int[]{2,1,3,4,5,6,7,8,9,10};
         System.out.println("冒泡排序");
         BubbleSort bubbleSort = new BubbleSort();
-        bubbleSort.sort(array);
+        bubbleSort.sort2(array);
         bubbleSort.printArray(array);
 
 //        System.out.println("选择排序");
@@ -35,9 +36,9 @@ public class Main {
 ////        heapSort.sort2(array);
 //        heapSort.printArray(array);
 
-          System.out.println("归并排序");
-          MergeSort mergeSort = new MergeSort();
-          mergeSort.sort(array);
-          mergeSort.printArray(array);
+//          System.out.println("归并排序");
+//          MergeSort mergeSort = new MergeSort();
+//          mergeSort.sort(array);
+//          mergeSort.printArray(array);
     }
 }
